@@ -1,0 +1,32 @@
+<div class="login-body">
+    <img class="login-logo" src="../../assets/logo.png" />
+    <form class="login-form" [formGroup] = "RegisterForm">
+        <span class="error" *ngIf="checkError('username')">Nombre de usuario inválido</span>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput placeholder="Nombre de usuario" formControlName="username">
+        </mat-form-field>
+
+        <span class="error" *ngIf="checkError('email')">Email inválido</span>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+
+        <span class="error" *ngIf="checkError('pass')">Password inválido</span>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="pass">
+        </mat-form-field>
+
+        <div class="full-width">
+            <button mat-raised-button color="primary" class="full-width"  (click)="register()">Registrarme</button>
+        </div>
+
+        <div class="full-width" class="link-line">
+            ¿Ya tienes cuenta? <a routerLink="/">Iniciar sesión</a>
+        </div>
+
+    </form>
+</div>
+

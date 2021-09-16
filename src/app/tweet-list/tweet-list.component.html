@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="toolbar">
+    <mat-toolbar-row>
+      <span>MiniTwitter</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<form class="tweet-form" [formGroup]="tweetForm">
+<span class="error" *ngIf="checkControl('mensaje')">Excede longitud máxima</span> 
+<mat-form-field appearance="fill">
+  <mat-label>Insertar Tweet</mat-label>
+  <textarea matInput formControlName="mensaje"></textarea>
+</mat-form-field>
+
+<div class="full-width">
+  <button mat-raised-button color="primary" class="full-width" (click)="createTweet()">Crear Tweet</button>
+</div>
+
+<app-tweet-item *ngFor="let tweet_element of Tweet" [tweet]="tweet_element" (tweetLiked)="favouriteTweet($event)"></app-tweet-item>
+
+

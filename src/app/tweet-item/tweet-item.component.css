@@ -1,0 +1,13 @@
+.tweet-card {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .tweet-header-image {
+    background-size: cover;
+  }
+
+  .icon-red {
+    color: red;
+  }
